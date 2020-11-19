@@ -15,6 +15,8 @@ const vs = "/api/v1/"
 const rutasUsuario = require('./routes/usuarios')
 app.use(vs,rutasUsuario)
 
+const rutasLugares = require('./routes/lugares')
+app.use(vs,rutasLugares)
 
 //puerto
 const port = process.env.PORT || 3000
