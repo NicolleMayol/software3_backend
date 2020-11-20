@@ -35,7 +35,7 @@ let validarInformacionRegistro = info => {
  */
 let validarLogin = async info => {
     let servicio = new ServicioPG()
-    let sql = `select nombres,apellidos from usuarios where email = $1 and contraseña = $2;`
+    let sql = `select nombres,apellidos,documento from usuarios where email = $1 and contraseña = $2;`
     let valores = [info.email,info.contraseña]
     let respuesta = await servicio.ejecutarSQL(sql,valores)
     return respuesta;
