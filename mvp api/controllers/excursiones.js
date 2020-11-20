@@ -33,7 +33,7 @@ let inscribirExcursion = async info => {
  */
 let obtenerExcursiones = async () => {
     let servicio = new ServicioPG()
-    let sql = `select usuarios.nombres,usuarios.apellidos,excursiones.descripcion,lugares.nombre,excursiones.url from excursiones 
+    let sql = `select usuarios.nombres,usuarios.apellidos,excursiones.descripcion,lugares.nombre,excursiones.url,excursiones.fecha from excursiones 
     inner join usuarios on excursiones.documento = usuarios.documento
     inner join lugares on excursiones.idlugar = lugares.id;`
     let respuesta = await servicio.ejecutarSQL(sql)
